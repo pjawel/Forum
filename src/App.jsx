@@ -350,7 +350,7 @@ export default function App() {
       <footer className="bg-black text-white py-16 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
           <div className="mb-8 md:mb-0">
-            <h3 className="text-2xl font-serif font-bold tracking-tighter mb-2">FORUM</h3>
+            <h3 className="text-2xl font-serif font-bold tracking-tighter mb-2">Sala Bankietowa Forum</h3>
             <p className="text-gray-500 text-sm">© 2026 Sala Bankietowa Forum. Wszelkie prawa zastrzeżone.</p>
           </div>
           <div className="flex space-x-8">
