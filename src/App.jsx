@@ -112,15 +112,15 @@ export default function App() {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
         <motion.div 
-          initial={{ scale: 1.1, opacity: 0 }}
-          animate={{ scale: 1, opacity: 0.6 }}
-          transition={{ duration: 1.5 }}
+          initial={{ scale: 1.1, opacity: 0, filter: "grayscale(100%)" }}
+          animate={{ scale: 1, opacity: 0.6, filter: "grayscale(0%)" }}
+          transition={{ duration: 2, ease: "easeOut" }}
           className="absolute inset-0"
         >
           <img 
             src="https://scontent-waw2-2.xx.fbcdn.net/v/t39.30808-6/498333176_1387491749246605_3970447718501471143_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=7b2446&_nc_ohc=HKX6QTxKcc4Q7kNvwHW70PU&_nc_oc=AdoBuel-pFa-tLdhLWyNZ4I5Cl8VqbDKFEhj2hxp7BlbFNf1XyBASmCkGtMN7a2T-C4&_nc_zt=23&_nc_ht=scontent-waw2-2.xx&_nc_gid=85RRnO2BjubJbpc8v2vuDQ&_nc_ss=7a3a8&oh=00_Af3KlM6oFcWNPyqOFxhKMM4-zE9dIIqscj3QXcmz7-MQAA&oe=69DAA8BC" 
             alt="Elegant Banquet Hall"
-            className="w-full h-full object-cover grayscale"
+            className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
         </motion.div>
@@ -183,15 +183,16 @@ export default function App() {
             </p>
           </motion.div>
           <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0, scale: 0.95, filter: "grayscale(100%)" }}
+            whileInView={{ opacity: 1, scale: 1, filter: "grayscale(0%)" }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 1.2 }}
             className="relative aspect-[4/5] overflow-hidden"
           >
             <img 
               src="https://scontent-waw2-2.xx.fbcdn.net/v/t39.30808-6/494734838_1381939619801818_4512394179502660997_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=7b2446&_nc_ohc=f6tiXTQFCT8Q7kNvwG3e0o6&_nc_oc=AdpuMRNXzQxpLhSBBKQ86AWgMyJveE6fagB62aFD1PEfzVAMNyNce_rosagPT052VQE&_nc_zt=23&_nc_ht=scontent-waw2-2.xx&_nc_gid=s4gU53iIH9cEIc2_G5MH7A&_nc_ss=7a3a8&oh=00_Af04oGBTLadDqFIECDU-AABa6vxmVr1IAq4tw4XG06pziQ&oe=69DA8BF3" 
               alt="Interior"
-              className="w-full h-full object-cover grayscale"
+              className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
             <div className="absolute inset-0 border-[20px] border-white/10 m-4" />
@@ -247,8 +248,12 @@ export default function App() {
             ].map((img, i) => (
               <motion.div 
                 key={i}
-                whileHover={{ scale: 0.98 }}
-                className={`relative overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 ${
+                initial={{ filter: "grayscale(100%)" }}
+                whileInView={{ filter: "grayscale(0%)" }}
+                viewport={{ once: false, amount: 0.3 }}
+                whileHover={{ scale: 0.98, filter: "grayscale(0%)" }}
+                transition={{ duration: 0.8 }}
+                className={`relative overflow-hidden transition-transform ${
                   i === 0 || i === 4 ? "md:col-span-2 md:row-span-1" : ""
                 }`}
               >
