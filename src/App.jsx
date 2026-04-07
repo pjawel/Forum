@@ -114,7 +114,7 @@ export default function App() {
         <motion.div 
           initial={{ scale: 1.1, opacity: 0, filter: "grayscale(100%)" }}
           animate={{ scale: 1, opacity: 0.6, filter: "grayscale(0%)" }}
-          transition={{ duration: 2, ease: "easeOut" }}
+          transition={{ duration: 2.5, ease: "easeOut", delay: 0.5 }}
           className="absolute inset-0"
         >
           <img 
@@ -185,8 +185,8 @@ export default function App() {
           <motion.div 
             initial={{ opacity: 0, scale: 0.95, filter: "grayscale(100%)" }}
             whileInView={{ opacity: 1, scale: 1, filter: "grayscale(0%)" }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 1.2 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 1.2, delay: 0.2 }}
             className="relative aspect-[4/5] overflow-hidden"
           >
             <img 
@@ -250,9 +250,9 @@ export default function App() {
                 key={i}
                 initial={{ filter: "grayscale(100%)" }}
                 whileInView={{ filter: "grayscale(0%)" }}
-                viewport={{ once: false, amount: 0.3 }}
+                viewport={{ once: false, amount: 0.5 }}
                 whileHover={{ scale: 0.98, filter: "grayscale(0%)" }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 1, delay: 0.1 }}
                 className={`relative overflow-hidden transition-transform ${
                   i === 0 || i === 4 ? "md:col-span-2 md:row-span-1" : ""
                 }`}
